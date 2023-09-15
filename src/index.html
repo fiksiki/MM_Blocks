@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?&lang=ru_RU" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="wrapper" id="app" :class="{isMobile, isTablet}">
@@ -13,6 +15,100 @@
             @@include('blocks/modules/maximus_blocks/maximus_blocks.html', {})
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Получите все элементы с классом main_maps__tab
+            const tabs = document.querySelectorAll('.main_maps__tab');
+
+            // Получите все элементы с классом main_maps__content
+            const contents = document.querySelectorAll('.main_maps__content');
+
+            // Получите все элементы с классом main_maps__bullet
+            const bullets = document.querySelectorAll('.main_maps__bullet');
+
+            // Добавьте обработчик клика на каждый элемент с классом main_maps__tab
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    // Уберите класс isActive у всех элементов
+                    tabs.forEach((t) => t.classList.remove('isActive'));
+                    contents.forEach((content) => content.classList.remove('isActive'));
+                    bullets.forEach((bullet) => bullet.classList.remove('isActive'));
+
+                    // Добавьте класс isActive только тому элементу, на который кликнули
+                    tab.classList.add('isActive');
+                    contents[index].classList.add('isActive');
+                    bullets[index].classList.add('isActive');
+                });
+            });
+
+            // Добавьте обработчик клика на каждый элемент с классом main_maps__bullet
+            bullets.forEach((bullet, index) => {
+                bullet.addEventListener('click', () => {
+                    // Уберите класс isActive у всех элементов
+                    tabs.forEach((t) => t.classList.remove('isActive'));
+                    contents.forEach((content) => content.classList.remove('isActive'));
+                    bullets.forEach((b) => b.classList.remove('isActive'));
+
+                    // Добавьте класс isActive только тому элементу, на который кликнули
+                    tabs[index].classList.add('isActive');
+                    contents[index].classList.add('isActive');
+                    bullet.classList.add('isActive');
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript" >
+        if (jQuery('#map').length) {
+            ymaps.ready(function () {
+                var myMap = new ymaps.Map('map', {
+                        center: [55.806530, 37.504681],
+                        zoom: 16,
+                        controls: ['zoomControl', 'fullscreenControl',"geolocationControl"]
+                    }, {
+                        searchControlProvider: 'yandex#search'
+                    }),
+                    myPlacemark2 = new ymaps.Placemark([55.806530, 37.504681], {
+                        hintContent: 'г. Москва, Волоколамское шоссе, д. 1 стр. 1, офис 902',
+                        balloonContent: 'г. Москва, Волоколамское шоссе, д. 1 стр. 1, офис 902'
+                    }, {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'img/point.svg',
+                        iconImageSize: [137, 80],
+                        iconImageOffset: [-68, -80]
+        
+                    });
+        
+                myMap.geoObjects
+                    // .add(myPlacemark)
+                    .add(myPlacemark2)
+            });
+        }
+        if (jQuery('#map2').length) {
+            ymaps.ready(function () {
+                var myMap = new ymaps.Map('map2', {
+                        center: [-8.653078, 115.172372],
+                        zoom: 16,
+                        controls: ['zoomControl', 'fullscreenControl',"geolocationControl"]
+                    }, {
+                        searchControlProvider: 'yandex#search'
+                    }),
+                    myPlacemark2 = new ymaps.Placemark([-8.653078, 115.172372], {
+                        hintContent: 'г. Москва, Волоколамское шоссе, д. 1 стр. 1, офис 902',
+                        balloonContent: 'г. Москва, Волоколамское шоссе, д. 1 стр. 1, офис 902'
+                    }, {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'img/point.svg',
+                        iconImageSize: [137, 80],
+                        iconImageOffset: [-68, -80]
+        
+                    });
+        
+                myMap.geoObjects
+                    // .add(myPlacemark)
+                    .add(myPlacemark2)
+            });
+        }
+    </script>
     <script src="js/app.min.js"></script>
 </body>
 </html>
