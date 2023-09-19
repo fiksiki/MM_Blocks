@@ -756,9 +756,9 @@ html, body {
         }
     }
     .footer {
-        margin-bottom: vw(80);
+        margin-bottom: vw(30);
         @media all and (max-width: 1023px) {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         &__main {
             background: #0E0E0E;
