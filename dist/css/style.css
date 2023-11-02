@@ -382,8 +382,8 @@ template {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.ttf") format("ttf");
-  font-weight: 700;
+  src: url("../fonts/Gilroy-Black.woff2") format("woff2"), url("../fonts/Gilroy-Black.woff") format("woff"), url("../fonts/Gilroy-Black.ttf") format("ttf");
+  font-weight: 900;
 }
 
 @font-face {
@@ -396,8 +396,8 @@ template {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Black.woff2") format("woff2"), url("../fonts/Gilroy-Black.woff") format("woff"), url("../fonts/Gilroy-Black.ttf") format("ttf");
-  font-weight: 900;
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.ttf") format("ttf");
+  font-weight: 700;
 }
 
 @font-face {
@@ -431,15 +431,15 @@ template {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Semibold.woff2") format("woff2"), url("../fonts/Gilroy-Semibold.woff") format("woff"), url("../fonts/Gilroy-Semibold.ttf") format("ttf");
-  font-weight: 600;
+  src: url("../fonts/Gilroy-Thin.woff2") format("woff2"), url("../fonts/Gilroy-Thin.woff") format("woff"), url("../fonts/Gilroy-Thin.ttf") format("ttf");
+  font-weight: 100;
 }
 
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Thin.woff2") format("woff2"), url("../fonts/Gilroy-Thin.woff") format("woff"), url("../fonts/Gilroy-Thin.ttf") format("ttf");
-  font-weight: 100;
+  src: url("../fonts/Gilroy-Semibold.woff2") format("woff2"), url("../fonts/Gilroy-Semibold.woff") format("woff"), url("../fonts/Gilroy-Semibold.ttf") format("ttf");
+  font-weight: 600;
 }
 
 @font-face {
@@ -1884,6 +1884,17 @@ body {
   flex: 0 0 18.2291666667vw;
 }
 
+.maximus_blocks .footer__txt {
+  color: #A6A6A6;
+  font-size: 0.7291666667vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 143%;
+  margin-right: 0.5208333333vw;
+  width: 100%;
+  margin-top: 0.78125vw;
+}
+
 .maximus_blocks .footer__links {
   display: flex;
   justify-content: space-between;
@@ -2819,6 +2830,16 @@ body {
     width: 100%;
     text-align: center;
     order: 3;
+  }
+
+  .maximus_blocks .footer__txt {
+    margin-right: 0;
+    margin-top: 13px;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    order: 3;
+    margin-top: 15px;
   }
 
   .maximus_blocks .footer__links {

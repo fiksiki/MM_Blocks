@@ -2036,6 +2036,25 @@ html, body {
                 order: 3;
             }
         }
+        &__txt {
+            color: #A6A6A6;
+            font-size: vw(14);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 143%;
+            margin-right: vw(10);
+            width: 100%;
+            margin-top: vw(15);
+            @media all and (max-width: 1023px) {
+                margin-right: 0;
+                margin-top: 13px;
+                font-size: 13px;
+                width: 100%;
+                text-align: center;
+                order: 3;
+                margin-top: 15px;
+            }
+        }
         &__links {
             display: flex;
             justify-content: space-between;
